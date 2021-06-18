@@ -36,3 +36,23 @@ width: continuous from 60.3 to 72.3.
 19. stroke: continuous from 2.07 to 4.17.
 20. compression-ratio: continuous from 7 to 23.
 21. horsepower: continuous from 48 to 288
+
+## Objective
+Use Machine learning to predict the price of a car based on several characteristics. The objective is to build a model to understand the factors that drive the car of the price. This will help your automobile company launch their new car in the market effectively by pricing it better.
+
+## Correlation matrix
+![image](https://user-images.githubusercontent.com/67750027/122544477-7724f480-d04a-11eb-8487-7462496b9762.png)
+
+## Without Feature selection 
+![image](https://user-images.githubusercontent.com/67750027/122544832-d256e700-d04a-11eb-9fdb-35a217f7f63c.png)
+
+From the above graphs we find:
+
+R sqaure for test data peaks at 13 features and at this point model generalises well as train R2 is v close to test. Train R2 keep on increasing beyond 13 features but R2 keeps increasing as you add more features to train data. We have select number of features where model accuracy and generalization both are at satisfactory level.
+RMSE for test data is lowest at 13 features and beyond that it increases. Train RMSE at 13 also looks good, adding more features to train decreases RMSE but again there is always a trade off between removing features (aka reducing complexity) and model performance. So we will go with 13 features.
+
+## Modelling the Data & Evaluation + Feature selection
+![image](https://user-images.githubusercontent.com/67750027/122544721-b6534580-d04a-11eb-9cbb-dafa1a8b3a25.png)
+
+From the graph, we see that the error is higher when k value goes beyind 4. RMSE is in the lower range when k < 4. Based on this observation, I choose k=3 and these four variables (enginesize, horsepower, carwidth) for an optimal model for deciding the price of the cars.
+
